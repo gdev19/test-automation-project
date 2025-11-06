@@ -1,0 +1,33 @@
+[project]
+name = 'demo-project'
+version = '0.1.0'
+description = 'Demo'
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+    { name = 'Codeff', email = 'info@codeff.com'},
+]
+
+classifiers=[
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: OS Independent',
+]
+
+
+dependencies = [
+    # "testuff @ https://github.com/gdev19/python-testuff.git",  # Later with stable library
+    "testuff",
+    "pytest-playwright",
+    "pytest-dotenv"
+]
+
+
+[tool.uv.sources]
+# needs to be changed later
+testuff = { path = "../python-testuff", editable = true }
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::pytest.PytestCollectionWarning"
+]
