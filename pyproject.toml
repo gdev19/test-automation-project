@@ -16,8 +16,7 @@ classifiers=[
 
 
 dependencies = [
-    # "testuff @ https://github.com/gdev19/python-testuff.git",  # Later with stable library
-    "testuff",
+    "testuff", 
     "pytest-playwright",
     "pytest-dotenv"
 ]
@@ -25,9 +24,5 @@ dependencies = [
 
 [tool.uv.sources]
 # needs to be changed later
-testuff = { path = "../python-testuff", editable = true }
-
-[tool.pytest.ini_options]
-filterwarnings = [
-    "ignore::pytest.PytestCollectionWarning"
-]
+# testuff = { path = "../python-testuff", editable = true }
+testuff = { git = "https://github.com/gdev19/python-testuff.git", branch = "clean-up-and-fix-the-repository" }
