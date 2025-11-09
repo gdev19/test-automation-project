@@ -12,7 +12,8 @@ def test_has_correct_title(page: Page, testuff_client: TestuffClient) -> None:
         start = perf_counter()
         page.goto("https://codeff.nl/")
         expect(page).to_have_title(re.compile("Codeff"))
-        testuff_client.add_automation(token=getenv("TOKEN"), lab_name=lab_name, automation_id=first_test[0].automation_id, branch_id=first_test[0].branch_id, name="Home Page Accessible", status='passed', seconds=int(perf_counter() - start), comment="Checked with Playwright")
+        comment = f"GITHUB_RUN_NUMBER: {getenv('GITHUB_RUN_NUMBER')}, GITHUB_RUN_ID: {getenv('GITHUB_RUN_ID')}"
+        testuff_client.add_automation(token=getenv("TOKEN"), lab_name=lab_name, automation_id=first_test[0].automation_id, branch_id=first_test[0].branch_id, name="Home Page Accessible", status='passed', seconds=int(perf_counter() - start), comment=comment)
     except Exception as e:
         testuff_client.add_automation(token=getenv("TOKEN"), lab_name=lab_name, automation_id=first_test[0].automation_id, branch_id=first_test[0].branch_id, name="Home Page Accessible", status='failed', seconds=int(perf_counter() - start), comment=f"Checked with Playwright. Error: {e}")
         raise e
