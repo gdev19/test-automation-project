@@ -937,7 +937,7 @@ wheels = [
 [[package]]
 name = "testuff"
 version = "0.1.0"
-source = { git = "https://github.com/gdev19/python-testuff.git?branch=clean-up-and-fix-the-repository#bc003826d9ffa24db9d96cdd5fc275c7b540bad2" }
+source = { git = "https://github.com/gdev19/python-testuff.git?branch=clean-up-and-fix-the-repository#f53e49b87c660f84fa266268fe2b72c043952de0" }
 dependencies = [
     { name = "requests", version = "2.31.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.8'" },
     { name = "requests", version = "2.32.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.8.*'" },
